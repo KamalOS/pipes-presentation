@@ -36,7 +36,7 @@ jobs:
               run: nci
 
             - name: Build
-              run: nr build --base /${{github.event.repository.name}}/presentation
+              run: nr build --base /${{ github.event.repository.name }}/
 
             - name: Setup Pages
               uses: actions/configure-pages@v4
@@ -52,6 +52,7 @@ jobs:
         needs: build
         runs-on: ubuntu-latest
         name: Deploy
+
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
